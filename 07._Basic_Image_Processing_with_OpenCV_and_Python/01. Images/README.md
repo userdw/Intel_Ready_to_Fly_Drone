@@ -4,6 +4,7 @@
 
 In this section, we will use well known image of Lenna above for testing purpose. It will be easier if we make a folder for each practice project, then put our images and codes in it.
 
+### Displaying an Image
 Displaying image in OpenCV can be done in just 9 lines of code. It can get simpler, but we included some lines so the code can be more _universal_. The code is as shown below:
 ```python
 import os, cv2
@@ -27,3 +28,11 @@ The simple explanation for code above is as below:
  * ```cv2.imshow("Image", _img)``` is to display the image on the window we created before.
  * ```cv2.waitKey(0)``` is needed so that the code will wait for an event first, which is waiting for a keypress, instead of executing next code.
  * ```cv2.destroyAllWindows()``` this code will destroy all the windows created before.
+
+That's it, we created some sort of _Hello World_ program for our journey with OpenCV and Python!
+
+### Color Spaces
+The image of Lenna we used before is 24-bit depth (8-bit Red, 8-bit Green, 8-bit Blue). RGB is the most usual way to represent a color image, and we usually called it as RBG color space. There are other color spaces available to represent a color image. Every color space has its own advantage, and can be better used in some cases than the other. In this section we will try some popular color spaces using built-in OpenCV function.
+
+
+
