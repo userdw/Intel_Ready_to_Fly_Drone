@@ -2,7 +2,7 @@
 
 <img src="/images/OpenCV_and_Python.png" height="400">
 
-As of 1.5 release firmware, Intel® Aero Platform for UAVs comes with OpenCV and Python 3 included. OpenCV (Open Source Computer Vision) is a library which is often found in researches and commercial products. Its robustness and ease of use contribute to its popularity for being choosen in general applications involving image processing. As of Python, it is scripting programming language with human-readable syntax. Python have many libraries in its repository which make it even easier to use. If both OpenCV and Python are easy to use, shouldn't image processing will be easy as well? Yes it should be! The topics in this part are arranged as below:
+As of 1.5+ firmware, Intel® Aero Platform for UAVs comes with OpenCV and Python 3 by default. OpenCV (Open Source Computer Vision) is an image processing library which is often found in researches and commercial products. Its robustness and ease of use contribute to its popularity for being choosen in general applications involving image processing. As of Python, it is one of the most popular scripting languages because it is heavily focused on human-readable aspect. It will make more sense to code in Python than in C/C++ from a beginner's point of view. With those backgrounds, we can make a guess that image processing utilizing both of them should be easy. In this part we will explore some general topics in image processing using OpenCV and Python. The available topics are arranged as below:
 * [01. Images]
 * [02. Histogram]
 * [03. Binary Vision]
@@ -13,13 +13,16 @@ As of 1.5 release firmware, Intel® Aero Platform for UAVs comes with OpenCV and
 * [08. Features]
 * [09. Video]
 
-Before we start with the topics above, let us make sure that we have both OpenCV and Python 3 in our Intel® Aero Platform for UAVs. Connect HDMI monitor and keyboard to your Intel® Aero Platform for UAVs then boot it up. After the terminal opened, type:
+Before we start, let us make sure that we have both OpenCV and Python 3 installed in our Intel® Aero Platform for UAVs. Connect HDMI monitor and keyboard to Intel® Aero Platform for UAVs then boot it up. After the terminal opened, type:
 ```
 python3
 ```
 
-The command above will brings up the Python 3 interpreter with ```>>>``` sign. Type:
-```
+The command above will brings up the Python 3 interpreter, indicated with ```>>>``` sign. After that, Type:
+```python
 import cv2
-cv2.__versioin__
+cv2.__version__
 ```
+The first line is to include the OpenCV library to our project. The second line will prints out the OpenCV library version. If there are no errors, then we are ready.
+
+Note: Since Intel® Aero Platform for UAVs doesn't include friendly text editor, it will be easier for us to type on desktop/laptop. We can make use of [WinSCP](https://winscp.net/eng/index.php).
