@@ -1,5 +1,5 @@
 # [ENGLISH] 01. Images
 
-'''python
+```python
 import cv2
-'''
+```
