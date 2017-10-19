@@ -23,6 +23,6 @@ The command above will brings up the Python 3 interpreter, indicated with ```>>>
 import cv2
 cv2.__version__
 ```
-The first line is to include the OpenCV library to our project. The second line will prints out the OpenCV library version. If there are no errors, then we are ready.
+The first line is to include the OpenCV package to our project. The second line will prints out the OpenCV package version. If there are no errors, then we are ready.
 
 Note: Since Intel® Aero Platform for UAVs doesn't include any friendly text editor, it will be easier for us to type on desktop/laptop. We can make use of [WinSCP](https://winscp.net/eng/index.php).
