@@ -19,20 +19,11 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
-Line ```python import os, cv2``` and ```python import numpy as np```
-
-```
-python3
-```
-
-The command will brings up Python 3 interpreter. To check whether OpenCV is installed or not, type:
-
-```python
-import cv2
-cv2.__version__
-```
-
-The last command should tell you the version of OpenCV.
-
-Since we don't have a friendly text editor in Intel® Aero Platform for UAVs, we could make use of [WinSCP](https://winscp.net/eng/index.php). We can type our code on Windows based desktop/laptop then transfer the code to Intel® Aero Platform for UAVs. [add more step, making folder ]
-
+The simple explanation for code above is as below:
+ * ```import os, cv2``` and ```import numpy as np``` will include the packages needed in our project.
+ * ```_projectDirectory = os.path.dirname(__file__)``` is for getting the code's path, then store it in ```_projectDirectory```.
+ * ```_images = os.path.join(_projectDirectory, "Lenna.jpg")``` since we put the image in the same directory as the code, we can add the image's name after the path. But since Windows use ```\``` and Linux use ```/``` as separator, it will be easier for us to let Python decides which is the suitable separator. Therefore we use ```os.path.join```.
+ * ```cv2.namedWindow("Image", cv2.WINDOW_AUTOSIZE)``` is to create an empty window named ```Image```.
+ * ```cv2.imshow("Image", _img)``` is to display the image on the window we created before.
+ * ```cv2.waitKey(0)``` is needed so that the code will wait for an event first, which is waiting for a keypress, instead of executing next code.
+ * ```cv2.destroyAllWindows()``` this code will destroy all the windows created before.
