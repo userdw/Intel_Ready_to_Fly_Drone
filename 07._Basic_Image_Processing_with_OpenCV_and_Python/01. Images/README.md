@@ -19,6 +19,7 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
+Line ```python import os, cv2``` and ```python import numpy as np```
 
 ```
 python3
