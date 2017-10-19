@@ -14,8 +14,12 @@ As of 1.5 release firmware, Intel® Aero Platform for UAVs comes with OpenCV and
 * [09. Video]
 
 Before we start with the topics above, let us make sure that we have both OpenCV and Python 3 in our Intel® Aero Platform for UAVs. Connect HDMI monitor and keyboard to your Intel® Aero Platform for UAVs then boot it up. After the terminal opened, type:
-'''
+```
 python3
-'''
+```
 
-The command above will brings up the Python 3 interpreter with '''>>>''' sign.
+The command above will brings up the Python 3 interpreter with ```>>>``` sign. Type:
+```
+import cv2
+cv2.__versioin__
+```
