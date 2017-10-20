@@ -95,9 +95,30 @@ The simple explanation for code above is as below:
 * ```_imgGray = cv2.cvtColor(_img, cv2.COLOR_BGR2GRAY)``` will convert the image from BGR to grayscale.
 
 #### HLS
-HLS color space is another way to represent color. HLS color space defines colors more naturally. Hue specifies the base color, the other two values then let you specify the saturation of that color and how bright the color should be. HLS color space is cylindrical, and can be represented as the image below.
+HLS color space is another way to represent color. HLS color space defines colors more naturally. Hue specifies the base color, the other two values then let you specify the saturation of that color and how bright the color should be. HLS color space is cylindrical, and can be represented as the image below. To convert a BGR image to HLS we just need to use ```cv2.COLOR_BGR2GHLS``` as ```cv2.cvtColor``` parameter.
 
 <img src="/images/HLS_Color_Space.png" height="200">
-credits to: [SharkD](https://commons.wikimedia.org/wiki/User:SharkD)
+credits to: https://commons.wikimedia.org/wiki/User:SharkD
 
-asdasd
+Below is the code to convert BGR color space to HLS.
+```python
+import os, cv2
+import numpy as np
+
+_projectDirectory = os.path.dirname(__file__)
+_images = os.path.join(_projectDirectory, "Lenna.jpg")
+
+_img = cv2.imread(_images, cv2.IMREAD_UNCHANGED)
+_imgHLS = cv2.cvtColor(_img, cv2.COLOR_BGR2HLS)
+_img1, _img2, _img3 = cv2.split(_imgHLS)
+_imgRslt = np.concatenate((_img1, _img2, _img3), 1)
+cv2.imwrite(os.path.join(_projectDirectory, "Out.jpg"), _imgRslt)
+cv2.namedWindow("Image", cv2.WINDOW_AUTOSIZE)
+cv2.imshow("Image", _imgRslt)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
+The output image should be the same as image below.
+
+<img src="/images/HLS_Lenna.jpg" height="200">
