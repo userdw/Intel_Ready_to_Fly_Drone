@@ -33,7 +33,7 @@ That's it, we created some sort of _Hello World_ program for our journey with Op
 
 ### Color Spaces
 
-<img src="/images/HLS_Lenna.jpg" height="400">
+<img src="/images/HLS_Lenna.jpg" height="200">
 
 The image of Lenna we used before is 24-bit depth (8-bit Red, 8-bit Green, 8-bit Blue). RGB is the most usual way to represent a color image, and we usually called it as RBG color space. There are other color spaces available to represent a color image. Every color space has its own advantage, and can be better used in some cases than the other. In this section we will try converting the image of Lenna to some popular color spaces using built-in OpenCV function.
 
