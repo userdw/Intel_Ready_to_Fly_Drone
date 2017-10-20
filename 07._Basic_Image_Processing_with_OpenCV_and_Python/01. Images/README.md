@@ -125,3 +125,10 @@ cv2.destroyAllWindows()
 The output image should be the same as image below.
 
 <img src="/images/HLS_Lenna.jpg" height="200">
+
+If the value of H after calculation is less than 0, we should add 360 to it. The output from the above equation will be:
+* 0 <= L <= 1
+* 0 <= S <= 1
+* 0 <= H <= 360
+
+Since we usually use 8-bit depth for each channel, the value of L and S will be scaled-up to 0 - 255, and H will be divided by 2 so it will fit the 0 - 255 range.
