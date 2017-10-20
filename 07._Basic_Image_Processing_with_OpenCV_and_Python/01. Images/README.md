@@ -64,7 +64,7 @@ cv2.destroyAllWindows()
 
 The output image should be like the picture below. The image representing blue, green, and red channel respectively.
 
-<img src="/images/BGR_Lenna.jpg" height="400">
+<img src="/images/BGR_Lenna.jpg" height="200">
 
 #### Grayscale
 Grayscale is one of the most popular color space used in image processing. Grayscale is simpler to process since it is usually represented in 1 channel, compared to 3 channels in color image (usually 1 channel will be represented in 8-bit). Most information in an image usually can be found through its luminance, and grayscale capture the luminance prety well. Not only grayscale simpler to compute, but it captures a lot of information within an image. To convert a BGR image to grayscale we just need to use ```cv2.COLOR_BGR2GRAY``` as ```cv2.cvtColor``` parameter. 
