@@ -42,7 +42,7 @@ That's it, we created some sort of _Hello World_ program for our journey with Op
 The image of Lenna we used before is 24-bit depth (8-bit Red, 8-bit Green, 8-bit Blue). RGB is the most usual way to represent a color image, and we usually called it as RGB color space. There are other color spaces available to represent a color image. Every color space has its own advantage, and can be better used in some cases than the other. In this section we will try converting the image of Lenna to some popular color spaces using built-in OpenCV function ```cv2.cvtColor```.
 
 ### RGB
-RGB is the most usual way to represent a color image. It came from the phiposophy of everything start from dark, and what kind of light needs to be emitted to produce a given color. OpenCV use BGR instead of RGB. They are basically the same in value, but different in order. As for why OpenCV use BGR, [this article](https://www.learnopencv.com/why-does-opencv-use-bgr-color-format/) might give you the reason. You can get each channel's value with built in OpenCV function ```cv2.split```. Below is the code to extract BGR value in an image and store them separately.
+RGB is the most usual way to represent a color image. It came from the phiposophy of everything start from black, and what kind of light needs to be emitted to produce a given color. OpenCV use BGR instead of RGB. They are basically the same in value, but different in order. As for why OpenCV use BGR, [this article](https://www.learnopencv.com/why-does-opencv-use-bgr-color-format/) might give you the reason. You can get each channel's value with built in OpenCV function ```cv2.split```. Below is the code to extract BGR value in an image and store them separately.
 ```python
 import os, cv2
 import numpy as np
