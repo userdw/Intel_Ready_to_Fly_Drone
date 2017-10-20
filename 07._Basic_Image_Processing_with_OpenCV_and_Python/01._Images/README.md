@@ -42,7 +42,7 @@ That's it, we created some sort of _Hello World_ program for our journey with Op
 The image of Lenna we used before is 24-bit depth (8-bit Red, 8-bit Green, 8-bit Blue). RGB is the most usual way to represent a color image, and we usually called it as RGB color space. There are other color spaces available to represent a color image. Every color space has its own advantages, and can give better performance in some cases than the other. In this section we will try converting the image of Lenna to some popular color spaces using built-in OpenCV function ```cv2.cvtColor```.
 
 #### RGB
-RGB (Red, Green, Blue) is the most usual way to represent a color image. It came from the phiposophy of everything start from black. A given color can be produced through emitting and combining red, green, and blue light together with specific intensity for each light. OpenCV use BGR instead of RGB. They are basically the same in value, but different in order. As for why OpenCV use BGR, [this article](https://www.learnopencv.com/why-does-opencv-use-bgr-color-format/) might give you the reason. You can get each channel's value with built-in OpenCV function ```cv2.split```. Below is the code to extract BGR values in an image and store them separately in variables.
+RGB (Red, Green, Blue) is the most usual way to represent a color image. It came from the phiposophy of everything start from black. A given color can be produced through emitting and combining red, green, and blue light together with specific intensity for each light. OpenCV use BGR instead of RGB. They are basically the same in value, but different in order. As for why OpenCV use BGR, [this article](https://www.learnopencv.com/why-does-opencv-use-bgr-color-format/) might give you the reason. You can get each channel value with built-in OpenCV function ```cv2.split```. Below is the code to extract BGR values in an image and store them separately in variables.
 ```python
 import os, cv2
 import numpy as np
@@ -64,7 +64,7 @@ The output image should be the same as image below, representing blue, green, an
 <img src="/images/BGR_Lenna.jpg" height="200">
 
 The simple explanation for code above is as below:
-* ```_img1, _img2, _img3 = cv2.split(_img)``` will get each channel's value in an image then store them to variables. ```_img1``` will store first channel value, ```_img2``` will store second channel value, ```_img3``` will store third channel value.
+* ```_img1, _img2, _img3 = cv2.split(_img)``` will get each channel value in an image then store them to variables. ```_img1``` will store first channel value, ```_img2``` will store second channel value, ```_img3``` will store third channel value.
 * ```_imgRslt = np.concatenate((_img1, _img2, _img3), 1)```. Since we want to display all the channels as different images in one window, we will need to concatenate ```_img1```, ```_img2```, and ```_img3```, then display the result to the window.
 
 #### Grayscale
