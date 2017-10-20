@@ -5,7 +5,7 @@
 In this section, we will use well known image of Lenna above for testing purpose. It will be easier if we make a folder for each practice project, then put our images and codes in it.
 
 Table of contents:
-[01. Displaying an Image]
+[01. Displaying an Image](#displaying-an-image)
 [02. Color Spaces]
 
 ### Displaying an Image
