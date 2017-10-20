@@ -68,10 +68,10 @@ The simple explanation for code above is as below:
 * ```_imgRslt = np.concatenate((_img1, _img2, _img3), 1)```. Since we want to display all the channels as different images in one window, we will need to concatenate ```_img1```, ```_img2```, and ```_img3```, then display the result to the window.
 
 #### Grayscale
+Grayscale is one of the most popular color space used in image processing. Grayscale is simpler to process since it is usually represented in 1 channel, compared to 3 channels in color image (usually 1 channel will be represented in 8-bit). Most information in an image usually can be found through its luminance, and grayscale capture the luminance prety well. In fact the conversion formula from RGB/BGR to grayscale used in OpenCV built-in function, is the same with conversion formula from RGB/BGR to Y (luminance) component in YCrCb color space. Not only grayscale is simpler to compute, but it captures a lot of information within an image. To convert a BGR image to grayscale we just need to use ```cv2.COLOR_BGR2GRAY``` as ```cv2.cvtColor``` parameter. Below is the code to convert BGR color space to grayscale.
 
 <img src="/images/Gray_Formula.jpg" width="500">
 
-Grayscale is one of the most popular color space used in image processing. Grayscale is simpler to process since it is usually represented in 1 channel, compared to 3 channels in color image (usually 1 channel will be represented in 8-bit). Most information in an image usually can be found through its luminance, and grayscale capture the luminance prety well. In fact the conversion formula from RGB/BGR to grayscale used in OpenCV built-in function, is the same with conversion formula from RGB/BGR to Y (luminance) component in YCrCb color space. Not only grayscale is simpler to compute, but it captures a lot of information within an image. To convert a BGR image to grayscale we just need to use ```cv2.COLOR_BGR2GRAY``` as ```cv2.cvtColor``` parameter. Below is the code to convert BGR color space to grayscale.
 ```python
 import os, cv2
 import numpy as np
@@ -95,4 +95,7 @@ The simple explanation for code above is as below:
 * ```_imgGray = cv2.cvtColor(_img, cv2.COLOR_BGR2GRAY)``` will convert the image from BGR to grayscale.
 
 #### HLS
-HLS color space is another way to represent color. 
+HLS color space is another way to represent color. HLS color space defines colors more naturally. Hue specifies the base color, the other two values then let you specify the saturation of that color and how bright the color should be. HLS color space is cylindrical, and can be represented as the image below.
+
+<img src="/images/HLS_Color_Space.jpg" height="200">
+credits to: [SharkD](https://commons.wikimedia.org/wiki/User:SharkD)
