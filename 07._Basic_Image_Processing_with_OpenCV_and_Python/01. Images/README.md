@@ -5,8 +5,8 @@
 In this section, we will use well known image of Lenna above for testing purpose. It will be easier if we make a folder for each practice project, then put our images and codes in it.
 
 Table of contents:
-[01. Displaying an Image](#displaying-an-image)
-[02. Color Spaces]
+* [01. Displaying an Image](#displaying-an-image)
+* [02. Color Spaces]
 
 ### Displaying an Image
 
@@ -42,7 +42,29 @@ That's it, we created some sort of _Hello World_ program for our journey with Op
 
 <img src="/images/HLS_Lenna.jpg" height="200">
 
-The image of Lenna we used before is 24-bit depth (8-bit Red, 8-bit Green, 8-bit Blue). RGB is the most usual way to represent a color image, and we usually called it as RBG color space. There are other color spaces available to represent a color image. Every color space has its own advantage, and can be better used in some cases than the other. In this section we will try converting the image of Lenna to some popular color spaces using built-in OpenCV function.
+The image of Lenna we used before is 24-bit depth (8-bit Red, 8-bit Green, 8-bit Blue). RGB is the most usual way to represent a color image, and we usually called it as RBG color space. There are other color spaces available to represent a color image. Every color space has its own advantage, and can be better used in some cases than the other. In this section we will try converting the image of Lenna to some popular color spaces using built-in OpenCV function ```cv2.cvtColor```.
+
+### RGB
+RGB is the most usual way to represent a color image. It came from the phiposophy of everything start from dark, and what kind of light needs to be emitted to produce a given color. OpenCV use BGR instead of RGB. They are basically the same in value, but different in order. As for why OpenCV use BGR, [this article](https://www.learnopencv.com/why-does-opencv-use-bgr-color-format/) might give you the reason. You can get each channel's value with built in OpenCV function ```cv2.split```. Below is the code to extract BGR value in an image and store them separately.
+```python
+import os, cv2
+import numpy as np
+
+_projectDirectory = os.path.dirname(__file__)
+_images = os.path.join(_projectDirectory, "Lenna.jpg")
+
+_img = cv2.imread(_images, cv2.IMREAD_UNCHANGED)
+_img1, _img2, _img3 = cv2.split(_img)
+_imgRslt = np.concatenate((_img1, _img2, _img3), 1)
+cv2.namedWindow("Image", cv2.WINDOW_AUTOSIZE)
+cv2.imshow("Image", _imgRslt)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
+The output image should be like the picture below. The image representing blue, green, and red channel respectively.
+
+<img src="/images/BGR_Lenna.jpg" height="400">
 
 #### Grayscale
-Grayscale is one of the most popular color space used in image processing. Grayscale is simpler to process since it is usually represented in 1 channel, compared to 3 channels in color image (usually 1 channel will be represented in 8-bit). Most information in an image usually can be found through its luminance, and grayscale capture the luminance prety well. Not only grayscale simpler to compute, but it captures a lot of information within an image.
+Grayscale is one of the most popular color space used in image processing. Grayscale is simpler to process since it is usually represented in 1 channel, compared to 3 channels in color image (usually 1 channel will be represented in 8-bit). Most information in an image usually can be found through its luminance, and grayscale capture the luminance prety well. Not only grayscale simpler to compute, but it captures a lot of information within an image. To convert a BGR image to grayscale we just need to use ```cv2.COLOR_BGR2GRAY``` as ```cv2.cvtColor``` parameter. 
