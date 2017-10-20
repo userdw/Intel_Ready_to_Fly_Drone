@@ -39,10 +39,10 @@ The simple explanation for code above is as below:
 That's it, we created some sort of _Hello World_ program for our journey with OpenCV and Python!
 
 ### Color Spaces
-The image of Lenna we used before is 24-bit depth (8-bit Red, 8-bit Green, 8-bit Blue). RGB is the most usual way to represent a color image, and we usually called it as RGB color space. There are other color spaces available to represent a color image. Every color space has its own advantage, and can be better used in some cases than the other. In this section we will try converting the image of Lenna to some popular color spaces using built-in OpenCV function ```cv2.cvtColor```.
+The image of Lenna we used before is 24-bit depth (8-bit Red, 8-bit Green, 8-bit Blue). RGB is the most usual way to represent a color image, and we usually called it as RGB color space. There are other color spaces available to represent a color image. Every color space has its own advantage, and can give better performance in some cases than the other. In this section we will try converting the image of Lenna to some popular color spaces using built-in OpenCV function ```cv2.cvtColor```.
 
 ### RGB
-RGB is the most usual way to represent a color image. It came from the phiposophy of everything start from black, and what kind of light needs to be emitted to produce a given color. OpenCV use BGR instead of RGB. They are basically the same in value, but different in order. As for why OpenCV use BGR, [this article](https://www.learnopencv.com/why-does-opencv-use-bgr-color-format/) might give you the reason. You can get each channel's value with built in OpenCV function ```cv2.split```. Below is the code to extract BGR value in an image and store them separately.
+RGB is the most usual way to represent a color image. It came from the phiposophy of everything start from black, and what kind of light needs to be emitted to produce a given color. OpenCV use BGR instead of RGB. They are basically the same in value, but different in order. As for why OpenCV use BGR, [this article](https://www.learnopencv.com/why-does-opencv-use-bgr-color-format/) might give you the reason. You can get each channel's value with built-in OpenCV function ```cv2.split```. Below is the code to extract BGR value in an image and store them separately.
 ```python
 import os, cv2
 import numpy as np
@@ -59,7 +59,7 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
-The output image should be like the image below, representing blue, green, and red channel respectively.
+The output image should be the same as image below, representing blue, green, and red channel respectively.
 
 <img src="/images/BGR_Lenna.jpg" height="200">
 
@@ -68,4 +68,22 @@ The simple explanation for code above is as below:
  * ```_imgRslt = np.concatenate((_img1, _img2, _img3), 1)```. Since we want to display all the channels as different images in one window, we will need to concatenate ```_img1```, ```_img2```, and ```_img3```, then display the result to the window.
 
 #### Grayscale
-Grayscale is one of the most popular color space used in image processing. Grayscale is simpler to process since it is usually represented in 1 channel, compared to 3 channels in color image (usually 1 channel will be represented in 8-bit). Most information in an image usually can be found through its luminance, and grayscale capture the luminance prety well. Not only grayscale simpler to compute, but it captures a lot of information within an image. To convert a BGR image to grayscale we just need to use ```cv2.COLOR_BGR2GRAY``` as ```cv2.cvtColor``` parameter. 
+Grayscale is one of the most popular color space used in image processing. Grayscale is simpler to process since it is usually represented in 1 channel, compared to 3 channels in color image (usually 1 channel will be represented in 8-bit). Most information in an image usually can be found through its luminance, and grayscale capture the luminance prety well. In fact the conversion formula from RGB to grayscale used in OpenCV built-in function, is the same with conversion formula from RGB to Y (luminance) component in YCrCb color space. Not only grayscale is simpler to compute, but it captures a lot of information within an image. To convert a BGR image to grayscale we just need to use ```cv2.COLOR_BGR2GRAY``` as ```cv2.cvtColor``` parameter. Below is the code to convert BGR color space to grayscale.
+```python
+import os, cv2
+import numpy as np
+
+_projectDirectory = os.path.dirname(__file__)
+_images = os.path.join(_projectDirectory, "Lenna.jpg")
+
+_img = cv2.imread(_images, cv2.IMREAD_UNCHANGED)
+_imgGray = cv2.cvtColor(_img, cv2.COLOR_BGR2GRAY)
+cv2.namedWindow("Image", cv2.WINDOW_AUTOSIZE)
+cv2.imshow("Image", _imgGray)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
+The output image should be the same as image below.
+
+<img src="/images/Gray_Lenna.jpg" height="200">
