@@ -101,7 +101,9 @@ HLS color space is another way to represent colors. HLS color space defines colo
 credits to: https://commons.wikimedia.org/wiki/User:SharkD
 
 Below is the code to convert BGR color space to HLS.
+
 <img src="/images/HLS_Formula.jpg" width="500">
+
 ```python
 import os, cv2
 import numpy as np
