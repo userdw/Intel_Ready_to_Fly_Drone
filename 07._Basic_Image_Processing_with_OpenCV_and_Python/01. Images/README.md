@@ -21,9 +21,9 @@ cv2.destroyAllWindows()
 ```
 
 The simple explanation for code above is as below:
- * ```import os, cv2``` and ```import numpy as np``` \r\nwill include the packages needed in our project.
+ * ```import os, cv2``` and ```import numpy as np``` will include the packages needed in our project.
  * ```_projectDirectory = os.path.dirname(__file__)``` is for getting the code's path, then store it in ```_projectDirectory```.
- * ```_images = os.path.join(_projectDirectory, "Lenna.jpg")```. Since we put the image in the same directory as the code, we can add the image's name after the path. But since Windows use ```\``` and Linux use ```/``` as separator, it will be easier for us to let Python decides which is the suitable separator. Therefore we can use ```os.path.join```.
+ * ```_images = os.path.join(_projectDirectory, "Lenna.jpg")```. Since we put the image in the same directory as the code, we can add the image's name after the path. But since Windows use ```\``` and Linux use ```/``` as separator, it will be easier for us to let Python decides which is the suitable separator. Therefore we will use ```os.path.join```.
  * ```cv2.namedWindow("Image", cv2.WINDOW_AUTOSIZE)``` is to create an empty window named ```Image```.
  * ```(python)cv2.imshow("Image", _img)``` is to display the image on the window we created before.
  * ```cv2.waitKey(0)``` is needed so that the code will wait for an event first, which is waiting for a keypress, instead of executing next code.
@@ -32,7 +32,4 @@ The simple explanation for code above is as below:
 That's it, we created some sort of _Hello World_ program for our journey with OpenCV and Python!
 
 ### Color Spaces
-The image of Lenna we used before is 24-bit depth (8-bit Red, 8-bit Green, 8-bit Blue). RGB is the most usual way to represent a color image, and we usually called it as RBG color space. There are other color spaces available to represent a color image. Every color space has its own advantage, and can be better used in some cases than the other. In this section we will try some popular color spaces using built-in OpenCV function.
-
-
-
+The image of Lenna we used before is 24-bit depth (8-bit Red, 8-bit Green, 8-bit Blue). RGB is the most usual way to represent a color image, and we usually called it as RBG color space. There are other color spaces available to represent a color image. Every color space has its own advantage, and can be better used in some cases than the other. In this section we will try converting the image of Lenna to some popular color spaces using built-in OpenCV function.
