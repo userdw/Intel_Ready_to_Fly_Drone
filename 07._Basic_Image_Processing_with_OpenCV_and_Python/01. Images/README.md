@@ -97,5 +97,7 @@ The simple explanation for code above is as below:
 #### HLS
 HLS color space is another way to represent color. HLS color space defines colors more naturally. Hue specifies the base color, the other two values then let you specify the saturation of that color and how bright the color should be. HLS color space is cylindrical, and can be represented as the image below.
 
-<img src="/images/HLS_Color_Space.jpg" height="200">
+<img src="/images/HLS_Color_Space.png" height="200">
 credits to: [SharkD](https://commons.wikimedia.org/wiki/User:SharkD)
+
+asdasd
