@@ -32,9 +32,10 @@ The simple explanation for code above is as below:
 That's it, we created some sort of _Hello World_ program for our journey with OpenCV and Python!
 
 ### Color Spaces
+
+<img src="/images/HLS_Lenna.jpg" height="400">
+
 The image of Lenna we used before is 24-bit depth (8-bit Red, 8-bit Green, 8-bit Blue). RGB is the most usual way to represent a color image, and we usually called it as RBG color space. There are other color spaces available to represent a color image. Every color space has its own advantage, and can be better used in some cases than the other. In this section we will try converting the image of Lenna to some popular color spaces using built-in OpenCV function.
 
 #### Grayscale
-Grayscale is one of the most popular color space used in image processing. Not only it is simpler to compute, but it captures a lot of information within an image. Grayscale is simpler to process since it is usually represented in 1 channel compared to 3 channels in color image (usually 1 channel will be represented in 8-bit).
-
-One of the reasons is, processing 24-bit depth image will need more computational power than processing 8-bit depth. But what about the importance of color that lost 
+Grayscale is one of the most popular color space used in image processing. Grayscale is simpler to process since it is usually represented in 1 channel, compared to 3 channels in color image (usually 1 channel will be represented in 8-bit). Most information in an image usually can be found through its luminance, and grayscale capture the luminance prety well. Not only grayscale simpler to compute, but it captures a lot of information within an image.
