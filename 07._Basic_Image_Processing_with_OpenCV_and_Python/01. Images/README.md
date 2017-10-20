@@ -69,7 +69,7 @@ The simple explanation for code above is as below:
 
 #### Grayscale
 
-<img src="/images/Gray_Formula.jpg" width="200">
+<img src="/images/Gray_Formula.jpg" width="500">
 
 Grayscale is one of the most popular color space used in image processing. Grayscale is simpler to process since it is usually represented in 1 channel, compared to 3 channels in color image (usually 1 channel will be represented in 8-bit). Most information in an image usually can be found through its luminance, and grayscale capture the luminance prety well. In fact the conversion formula from RGB/BGR to grayscale used in OpenCV built-in function, is the same with conversion formula from RGB/BGR to Y (luminance) component in YCrCb color space. Not only grayscale is simpler to compute, but it captures a lot of information within an image. To convert a BGR image to grayscale we just need to use ```cv2.COLOR_BGR2GRAY``` as ```cv2.cvtColor``` parameter. Below is the code to convert BGR color space to grayscale.
 ```python
