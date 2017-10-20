@@ -25,4 +25,4 @@ cv2.__version__
 ```
 The first line is to include the OpenCV package to our project. The second line will prints out the OpenCV package version. If there are no errors, then we are ready.
 
-Note: Since Intel® Aero Platform for UAVs doesn't include any friendly text editor, it will be easier for us to type our code on desktop/laptop. We can make use of [WinSCP](https://winscp.net/eng/index.php) to transfer our code to Intel® Aero Platform for UAVs.
+Note: Since Intel® Aero Platform for UAVs doesn't include any "user friendly" text editor, it will be easier for us to type our code on desktop/laptop. We can make use of [WinSCP](https://winscp.net/eng/index.php) to transfer our code to Intel® Aero Platform for UAVs.
