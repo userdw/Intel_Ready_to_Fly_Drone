@@ -5,6 +5,9 @@
 In this section, we will use well known image of Lenna above for testing purpose. It will be easier if we make a folder for each practice project, then put our images and codes in it.
 
 ### Displaying an Image
+
+<img src="/images/Display_Lenna.jpg" height="400">
+
 Displaying image in OpenCV can be done in just 9 lines of code. It can get simpler, but we included some lines so the code can be more _universal_. The code is as shown below:
 ```python
 import os, cv2
