@@ -6,7 +6,7 @@ In this section, we will use well known image of Lenna above for testing purpose
 
 Table of contents:
 * [01. Displaying an Image](#displaying-an-image)
-* [02. Color Spaces]
+* [02. Color Spaces](#color-spaces)
 
 ### Displaying an Image
 
@@ -39,9 +39,6 @@ The simple explanation for code above is as below:
 That's it, we created some sort of _Hello World_ program for our journey with OpenCV and Python!
 
 ### Color Spaces
-
-<img src="/images/HLS_Lenna.jpg" height="200">
-
 The image of Lenna we used before is 24-bit depth (8-bit Red, 8-bit Green, 8-bit Blue). RGB is the most usual way to represent a color image, and we usually called it as RBG color space. There are other color spaces available to represent a color image. Every color space has its own advantage, and can be better used in some cases than the other. In this section we will try converting the image of Lenna to some popular color spaces using built-in OpenCV function ```cv2.cvtColor```.
 
 ### RGB
@@ -62,9 +59,13 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
-The output image should be like the picture below. The image representing blue, green, and red channel respectively.
+The output image should be like the image below, representing blue, green, and red channel respectively.
 
 <img src="/images/BGR_Lenna.jpg" height="200">
+
+The simple explanation for code above is as below:
+ * ```_img1, _img2, _img3 = cv2.split(_img)``` will get each channel's value in an image then store them to variables. ```_img1``` will store first channel value, ```_img2``` will store second channel value, ```_img3``` will store third channel value.
+ * ```_imgRslt = np.concatenate((_img1, _img2, _img3), 1)```. Since we want to display those channels as different images in one window, we will need to concatenate ```_img1```, ```_img2```, and ```_img3```, then display the result to the window.
 
 #### Grayscale
 Grayscale is one of the most popular color space used in image processing. Grayscale is simpler to process since it is usually represented in 1 channel, compared to 3 channels in color image (usually 1 channel will be represented in 8-bit). Most information in an image usually can be found through its luminance, and grayscale capture the luminance prety well. Not only grayscale simpler to compute, but it captures a lot of information within an image. To convert a BGR image to grayscale we just need to use ```cv2.COLOR_BGR2GRAY``` as ```cv2.cvtColor``` parameter. 
