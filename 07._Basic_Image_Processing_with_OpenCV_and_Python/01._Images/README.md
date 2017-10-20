@@ -122,7 +122,7 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
 
-The output image should be the same as image below.
+The output image should be the same as image below, representing hue, lightness, and saturation channel respectively.
 
 <img src="/images/HLS_Lenna.jpg" height="200">
 
